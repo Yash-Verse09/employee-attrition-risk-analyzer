@@ -1,0 +1,36 @@
+Column,Data Type,Unique Values,Sample Value
+Age,int64,43,41
+Attrition,str,2,Yes
+BusinessTravel,str,3,Travel_Rarely
+DailyRate,int64,886,1102
+Department,str,3,Sales
+DistanceFromHome,int64,29,1
+Education,int64,5,2
+EducationField,str,6,Life Sciences
+EmployeeCount,int64,1,1
+EmployeeNumber,int64,1470,1
+EnvironmentSatisfaction,int64,4,2
+Gender,str,2,Female
+HourlyRate,int64,71,94
+JobInvolvement,int64,4,3
+JobLevel,int64,5,2
+JobRole,str,9,Sales Executive
+JobSatisfaction,int64,4,4
+MaritalStatus,str,3,Single
+MonthlyIncome,int64,1349,5993
+MonthlyRate,int64,1427,19479
+NumCompaniesWorked,int64,10,8
+Over18,str,1,Y
+OverTime,str,2,Yes
+PercentSalaryHike,int64,15,11
+PerformanceRating,int64,2,3
+RelationshipSatisfaction,int64,4,1
+StandardHours,int64,1,80
+StockOptionLevel,int64,4,0
+TotalWorkingYears,int64,40,8
+TrainingTimesLastYear,int64,7,0
+WorkLifeBalance,int64,4,1
+YearsAtCompany,int64,37,6
+YearsInCurrentRole,int64,19,4
+YearsSinceLastPromotion,int64,16,0
+YearsWithCurrManager,int64,18,5

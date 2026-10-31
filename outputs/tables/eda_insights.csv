@@ -1,0 +1,9 @@
+Factor,Highest Attrition Group,Highest Rate %,Lowest Attrition Group,Lowest Rate %
+OverTime,Yes,30.5,No,10.4
+Department,Sales,20.6,Research & Development,13.8
+MaritalStatus,Single,25.5,Divorced,10.1
+BusinessTravel,Travel_Frequently,24.9,Non-Travel,8.0
+JobRole,Sales Representative,39.8,Research Director,2.5
+AgeGroup,18-25,35.8,36-45,9.2
+IncomeBand,<3k,28.6,10k+,8.9
+TenureBand,0-2,29.8,10+,8.1

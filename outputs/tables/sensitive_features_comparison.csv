@@ -1,0 +1,5 @@
+,With sensitive features,Without sensitive features
+ROC-AUC,0.798,0.776
+Recall,0.617,0.617
+Precision,0.345,0.358
+F1,0.443,0.453

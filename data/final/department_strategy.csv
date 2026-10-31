@@ -1,0 +1,10 @@
+Department,Rank,Risk Factor,At-Risk Employees Affected (%),Recommended Strategy
+Human Resources,1,Recent Manager Change,48.6,"Support employees who recently got a new manager with onboarding, mentoring and regular one-to-one check-ins in the first year."
+Human Resources,2,Low Environment Satisfaction,45.7,"Run pulse surveys and improve workspace, tools and team facilities."
+Human Resources,3,Overtime,34.3,Reduce mandatory overtime by redistributing workload and review overtime compensation or time-off policy.
+Research & Development,1,Overtime,48.1,Reduce mandatory overtime by redistributing workload and review overtime compensation or time-off policy.
+Research & Development,2,Recent Manager Change,42.9,"Support employees who recently got a new manager with onboarding, mentoring and regular one-to-one check-ins in the first year."
+Research & Development,3,Low Environment Satisfaction,35.3,"Run pulse surveys and improve workspace, tools and team facilities."
+Sales,1,Recent Manager Change,43.9,"Support employees who recently got a new manager with onboarding, mentoring and regular one-to-one check-ins in the first year."
+Sales,2,Overtime,40.7,Reduce mandatory overtime by redistributing workload and review overtime compensation or time-off policy.
+Sales,3,Low Environment Satisfaction,38.3,"Run pulse surveys and improve workspace, tools and team facilities."

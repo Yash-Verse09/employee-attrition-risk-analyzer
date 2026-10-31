@@ -1,0 +1,23 @@
+1. **Overall attrition:** 237 of 1470 employees (16.1%) left the company, so the dataset is imbalanced and recall/F1 must be tracked along with accuracy.
+
+2. **OverTime:** employees working overtime show 30.5% attrition versus 10.4% for others, which is 2.9 times higher.
+
+3. **Marital status:** Single employees have the highest attrition (25.5%), while Divorced employees have the lowest (10.1%).
+
+4. **Business travel:** the Travel_Frequently group has the highest attrition (24.9%) and the Non-Travel group the lowest (8.0%).
+
+5. **Department:** Sales has the highest attrition (20.6%) and Research & Development the lowest (13.8%).
+
+6. **Job role:** Sales Representative has the highest attrition (39.8%), whereas Research Director has the lowest (2.5%).
+
+7. **Age:** the 18-25 age group leaves most often (35.8%), while the 36-45 group is the most stable (9.2%).
+
+8. **Income:** the <3k monthly income band shows 28.6% attrition compared to 8.9% in the 10k+ band.
+
+9. **Tenure:** employees with 0-2 years at the company have the highest attrition (29.8%), meaning early-tenure employees are the most at risk.
+
+10. **Job satisfaction:** employees with satisfaction level 1 have 22.8% attrition, against 11.3% at level 4.
+
+11. **Distance from home:** the 21-30 km band has the highest attrition (22.1%).
+
+12. **Correlation:** the feature most correlated with attrition is `OverTime` (r = 0.25), followed by `MaritalStatus_Single` (r = 0.18) and `TotalWorkingYears` (r = -0.17).
