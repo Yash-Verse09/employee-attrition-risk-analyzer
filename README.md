@@ -33,7 +33,6 @@ Predicts **who** may leave, explains **why**, and recommends **what HR can do ab
 - [Tech stack](#tech-stack)
 - [Project structure](#project-structure)
 - [Getting started](#getting-started)
-- [Limitations](#limitations)
 - [Future scope](#future-scope)
 - [Author](#author)
 
@@ -210,15 +209,6 @@ jupyter notebook
 ```
 
 Then run the notebooks in the order they are numbered.
-
----
-
-## Limitations
-
-- The dataset is small and synthetic, not real company data.
-- The what-if simulator and impact estimates reflect patterns the model learned. They do not prove that an HR action will make an employee stay.
-- The fairness audit found uneven recall across age groups (about 0.89 for the best group, down to 0.41 for the worst). The model should support human judgement, not replace it.
-- The live score uses the final model, while other pages use out-of-fold scores, so small differences are expected.
 
 ---
 
