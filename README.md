@@ -12,7 +12,7 @@ Predicts **who** may leave, explains **why**, and recommends **what HR can do ab
 ![Dashboard](https://img.shields.io/badge/Dashboard-HTML%20%7C%20CSS%20%7C%20JS-E34F26?logo=html5&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Complete-2E7D6B)
 
-**[Live Demo](https://YOUR-LINK-HERE)**  ·  **[Report Issue](../../issues)**
+**[Live Demo](https://yash-verse09.github.io/employee-attrition-risk-analyzer/)**  ·  
 
 <img src="screenshots/overview.png" alt="Dashboard overview" width="900">
 
