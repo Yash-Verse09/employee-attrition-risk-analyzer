@@ -1,32 +1,103 @@
+<div align="center">
+
 # Employee Attrition Risk Analyzer
 
-An explainable AI system that predicts which employees are likely to leave, explains **why**, and recommends **what HR can do about it**.
+### An explainable AI decision-support system for HR
 
-**Live demo:** https://YOUR-LINK-HERE
+Predicts **who** may leave, explains **why**, and recommends **what HR can do about it**.
 
-![Dashboard overview](screenshots/overview.png)
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-Logistic%20Regression-F7931E?logo=scikitlearn&logoColor=white)
+![SHAP](https://img.shields.io/badge/Explainability-SHAP-1F3A5F)
+![Dashboard](https://img.shields.io/badge/Dashboard-HTML%20%7C%20CSS%20%7C%20JS-E34F26?logo=html5&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Complete-2E7D6B)
 
-## The problem
+**[Live Demo](https://YOUR-LINK-HERE)**  ·  **[Report Issue](../../issues)**
 
-HR teams usually learn about attrition after the employee has already left, along with the hiring, training and experience cost. Most prediction projects stop at a Yes/No answer, which tells HR nothing about what to change.
+<img src="screenshots/overview.png" alt="Dashboard overview" width="900">
 
-## What this project does
+</div>
 
-- **Risk score (0-100)** for every employee, grouped into Low, Medium and High risk.
-- **Explainable reasons** using SHAP. Reasons are split into *controllable* factors HR can change (overtime, travel, satisfaction, promotion gap) and *profile* factors it cannot (age, role, marital status).
-- **Retention strategy generator** that maps each risk factor to an HR action, with a department-wise playbook.
-- **Impact and cost view** estimating how much risk and replacement cost an intervention could remove.
-- **Fairness audit** across age and gender, including the gaps found.
-- **Live Predictor:** enter a new employee and get an instant score, reasons and recommended action.
-- **What-if Simulator:** change overtime, travel, satisfaction and more for an existing employee and compare risk before and after.
+---
 
-## Dashboard pages
+## Table of Contents
+
+- [Overview](#overview)
+- [Why this project is different](#why-this-project-is-different)
+- [Key features](#key-features)
+- [Screenshots](#screenshots)
+- [System architecture](#system-architecture)
+- [Dataset](#dataset)
+- [Methodology](#methodology)
+- [Results](#results)
+- [Tech stack](#tech-stack)
+- [Project structure](#project-structure)
+- [Getting started](#getting-started)
+- [Limitations](#limitations)
+- [Future scope](#future-scope)
+- [Author](#author)
+
+---
+
+## Overview
+
+HR teams usually learn about attrition **after** an employee has left, together with the hiring, training and experience cost that follows. Most prediction projects stop at a Yes/No answer, which tells HR nothing about what to change.
+
+This project turns a prediction into a decision. Every employee gets a risk score from 0 to 100, the main reasons behind it, and a recommended HR action. The whole system runs in a single HTML dashboard that needs no server.
+
+---
+
+## Why this project is different
+
+| Typical attrition project | This project |
+|---|---|
+| Predicts Yes or No | Gives a 0-100 risk score with Low, Medium and High levels |
+| Reports accuracy | Judges models on recall, F1 and ROC-AUC, because the data is imbalanced |
+| No explanation | Explains every prediction with SHAP |
+| All reasons treated equally | Separates reasons HR **can** change from those it **cannot** |
+| Stops at the model | Generates department-wise retention strategy and cost impact |
+| Ignores bias | Audits fairness by age and gender and reports the gaps |
+| Static notebook | Interactive dashboard with a live predictor and what-if simulator |
+
+---
+
+## Key features
+
+**Explainable risk scoring.** Each score comes with the top factors pushing it up, split into controllable factors (overtime, travel, satisfaction, promotion gap) and profile factors (age, role, marital status).
+
+**Retention strategy generator.** Each risk factor maps to a concrete HR action, summarised as a playbook for every department.
+
+**Impact and cost view.** Estimates how much risk and replacement cost an intervention could remove.
+
+**Live Predictor.** Enter a new employee's details and get an instant score, reasons and recommended action.
+
+**What-if Simulator.** Change overtime, travel, satisfaction and more for an existing employee, and compare risk before and after. It also ranks the biggest levers for that employee.
+
+**Fairness audit.** Recall and false positive rate by age group and gender, plus a test with sensitive features removed.
+
+---
+
+## Screenshots
+
+<table>
+  <tr>
+    <td align="center"><img src="screenshots/lookup.png" alt="Employee Lookup"><br><b>Employee Lookup</b></td>
+    <td align="center"><img src="screenshots/predictor.png" alt="Live Predictor"><br><b>Live Predictor</b></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="screenshots/whatif.png" alt="What-if Simulator"><br><b>What-if Simulator</b></td>
+    <td align="center"><img src="screenshots/strategy.png" alt="Retention Strategy"><br><b>Retention Strategy</b></td>
+  </tr>
+</table>
+
+<details>
+<summary><b>All dashboard pages</b></summary>
 
 | # | Page | What it shows |
 |---|------|---------------|
 | 01 | Overview | Headline numbers and whether the risk score separates leavers from stayers |
 | 02 | Attrition Drivers | Attrition by any factor, plus SHAP charts |
-| 03 | Risk Explorer | Threshold slider with the recall and precision trade-off, and a watchlist |
+| 03 | Risk Explorer | Threshold slider showing the recall and precision trade-off, and a watchlist |
 | 04 | Employee Lookup | One employee's score, reasons and action |
 | 05 | Retention Strategy | Department-wise factors and recommended actions |
 | 06 | Impact and Cost | Estimated effect of interventions and replacement cost |
@@ -34,70 +105,138 @@ HR teams usually learn about attrition after the employee has already left, alon
 | 08 | Live Predictor | Score a new employee |
 | 09 | What-if Simulator | Before and after risk for changed attributes |
 
+</details>
+
+---
+
+## System architecture
+
+```mermaid
+flowchart LR
+    A[IBM HR Dataset<br/>1,470 employees] --> B[Cleaning, Encoding<br/>and Scaling]
+    B --> C[EDA and<br/>Correlation Analysis]
+    B --> D[Model Training<br/>and Evaluation]
+    D --> E[Risk Scores<br/>out-of-fold]
+    D --> F[SHAP<br/>Explanations]
+    F --> G[Retention Strategy<br/>Generator]
+    D --> H[Exported Model<br/>Parameters]
+    E --> I[HTML Dashboard]
+    G --> I
+    H --> I
+    I --> J[HR Insights<br/>Live Predictor<br/>What-if Simulator]
+```
+
+---
+
 ## Dataset
 
-[IBM HR Analytics Employee Attrition and Performance](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset): 1,470 employees, 35 attributes. About 16% left and 84% stayed, so the data is imbalanced.
+[IBM HR Analytics Employee Attrition and Performance](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset)
 
-## Method
+| Property | Value |
+|---|---|
+| Employees | 1,470 |
+| Attributes | 35 |
+| Target | `Attrition` (Yes or No) |
+| Class balance | About 16% left, 84% stayed |
 
-1. Clean the data and drop constant columns.
-2. Exploratory data analysis of attrition patterns.
-3. One-hot encode categorical features and standardize numeric ones (44 model features).
-4. Stratified 80:20 split, class weighting for the imbalance.
-5. Compare Logistic Regression, Random Forest and XGBoost using recall, precision, F1 and ROC-AUC rather than accuracy.
-6. Generate out-of-fold (5-fold) risk scores so each employee is scored by a model that did not train on them.
-7. Explain predictions with SHAP and generate retention actions.
-8. Export the model parameters so the dashboard can score employees in the browser.
+---
 
-## Model results (held-out test set, 294 employees, 47 leavers)
+## Methodology
+
+1. **Clean** the data and drop constant columns.
+2. **Explore** attrition patterns across groups and features.
+3. **Encode and scale:** one-hot encoding and standardisation, giving 44 model features.
+4. **Split** the data 80:20 with stratification, and apply class weighting for the imbalance.
+5. **Compare** Logistic Regression, Random Forest and XGBoost using recall, precision, F1 and ROC-AUC.
+6. **Score** every employee with 5-fold out-of-fold predictions, so no one is scored by a model that trained on them.
+7. **Explain** predictions with SHAP and generate retention actions.
+8. **Export** the model parameters so the dashboard can score employees in the browser.
+
+---
+
+## Results
+
+Held-out test set: 294 employees, of whom 47 left.
 
 | Model | Recall | F1 | ROC-AUC |
-|-------|--------|----|---------|
-| **Logistic Regression** | **0.617** | 0.443 | **0.798** |
+|---|:---:|:---:|:---:|
+| **Logistic Regression (selected)** | **0.617** | 0.443 | **0.798** |
 | Random Forest | 0.255 | 0.329 | 0.787 |
 | XGBoost | 0.383 | 0.419 | 0.771 |
 
-Logistic Regression was chosen because it caught the most leavers, had the best ROC-AUC, and is the easiest to explain. Accuracy was not used to choose a model: because 84% of employees stay, a model that predicts "stay" for everyone would already score 84%.
+**Why Logistic Regression?** It caught the most leavers (29 of 47), had the best ROC-AUC, and is the easiest to explain. Its coefficients also let the dashboard score employees directly in the browser.
+
+**Why not accuracy?** Because 84% of employees stay, a model that predicts "stay" for everyone already scores 84%. Recall and F1 show whether a model actually finds the people who leave.
+
+---
 
 ## Tech stack
 
-Python, Pandas, NumPy, Scikit-learn, XGBoost, SHAP, Matplotlib, Seaborn, Jupyter Notebook. The dashboard is a single HTML file (HTML, CSS, JavaScript) with the model coefficients embedded, so it runs without a server.
+| Area | Tools |
+|---|---|
+| Data and ML | Python, Pandas, NumPy, Scikit-learn, XGBoost |
+| Explainability | SHAP |
+| Visualisation | Matplotlib, Seaborn |
+| Development | Jupyter Notebook |
+| Dashboard | HTML, CSS, JavaScript (single file, no server) |
+
+---
 
 ## Project structure
 
 ```
 employee-attrition-risk-analyzer/
-├── notebooks/        # analysis and modelling notebooks, run in order
-├── data/             # dataset and generated outputs
-├── dashboard/        # dashboard source
-├── index.html        # the dashboard (open this file)
-├── screenshots/
+├── notebooks/          Analysis and modelling notebooks, run in order
+├── data/               Dataset and generated outputs
+├── dashboard/          Dashboard source
+├── screenshots/        Images used in this README
+├── index.html          The dashboard (open this file)
 └── README.md
 ```
 
-## How to run
+---
 
-- **Dashboard:** open `index.html` in any modern browser. No installation needed.
-- **Notebooks:** install the requirements, then run the notebooks in order.
+## Getting started
+
+**Run the dashboard.** Open `index.html` in any modern browser. Nothing needs to be installed.
+
+**Run the notebooks.**
 
 ```bash
+git clone https://github.com/YOUR-USERNAME/employee-attrition-risk-analyzer.git
+cd employee-attrition-risk-analyzer
 pip install pandas numpy scikit-learn xgboost shap matplotlib seaborn jupyter
 jupyter notebook
 ```
 
+Then run the notebooks in the order they are numbered.
+
+---
+
 ## Limitations
 
 - The dataset is small and synthetic, not real company data.
-- The what-if simulator and impact estimates reflect patterns the model learned. They do not prove that an HR action will cause an employee to stay.
-- The fairness audit found uneven recall across age groups (about 0.89 for the best group down to 0.41 for the worst), so the model should not be used for decisions about individuals without human review.
+- The what-if simulator and impact estimates reflect patterns the model learned. They do not prove that an HR action will make an employee stay.
+- The fairness audit found uneven recall across age groups (about 0.89 for the best group, down to 0.41 for the worst). The model should support human judgement, not replace it.
 - The live score uses the final model, while other pages use out-of-fold scores, so small differences are expected.
+
+---
 
 ## Future scope
 
-- Connect to a real HR database and retrain as new leaver outcomes arrive.
+- Connect to a real HR database and retrain as new outcomes arrive.
 - Automated alerts for employees who cross the High-risk threshold.
 - Validate on larger real-world datasets.
 
+---
+
 ## Author
 
-**Yash Gupta**, BCA Semester 5, ITM University Gwalior.
+**Yash Gupta**
+BCA Semester 5, Department of Computing and Intelligent System, ITM University Gwalior
+
+<div align="center">
+
+If you found this project useful, consider giving it a star.
+
+</div>
