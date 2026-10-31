@@ -80,12 +80,16 @@ This project turns a prediction into a decision. Every employee gets a risk scor
 
 <table>
   <tr>
-    <td align="center"><img src="screenshots/lookup.png" alt="Employee Lookup"><br><b>Employee Lookup</b></td>
-    <td align="center"><img src="screenshots/predictor.png" alt="Live Predictor"><br><b>Live Predictor</b></td>
+    <td align="center"><img src="<img width="1917" height="872" alt="dashbaord png" src="https://github.com/user-attachments/assets/bfc40513-b544-4b2c-a63b-dd5ed9617942" />
+" alt="Employee Lookup"><br><b>Employee Lookup</b></td>
+    <td align="center"><img src="<img width="1910" height="876" alt="live_predictor png" src="https://github.com/user-attachments/assets/14d9334b-4acd-4474-ac0c-86f5b7d6ee6b" />
+" alt="Live Predictor"><br><b>Live Predictor</b></td>
   </tr>
   <tr>
-    <td align="center"><img src="screenshots/whatif.png" alt="What-if Simulator"><br><b>What-if Simulator</b></td>
-    <td align="center"><img src="screenshots/strategy.png" alt="Retention Strategy"><br><b>Retention Strategy</b></td>
+    <td align="center"><img src="<img width="1917" height="876" alt="what-if png" src="https://github.com/user-attachments/assets/6b8f46d7-95db-4c75-bb56-2874c4f689a2" />
+" alt="What-if Simulator"><br><b>What-if Simulator</b></td>
+    <td align="center"><img src="<img width="1917" height="872" alt="retention png" src="https://github.com/user-attachments/assets/ec0b0ffa-6503-4a72-a361-694721e5cc61" />
+" alt="Retention Strategy"><br><b>Retention Strategy</b></td>
   </tr>
 </table>
 
