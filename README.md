@@ -12,9 +12,8 @@ Predicts **who** may leave, explains **why**, and recommends **what HR can do ab
 ![Dashboard](https://img.shields.io/badge/Dashboard-HTML%20%7C%20CSS%20%7C%20JS-E34F26?logo=html5&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Complete-2E7D6B)
 
-**[Live Demo](https://yash-verse09.github.io/employee-attrition-risk-analyzer/)**  ·  
+**[Live Demo](https://yash-verse09.github.io/employee-attrition-risk-analyzer/)**  
 
-<img src="screenshots/overview.png" alt="Dashboard overview" width="900">
 
 </div>
 
@@ -33,6 +32,7 @@ Predicts **who** may leave, explains **why**, and recommends **what HR can do ab
 - [Tech stack](#tech-stack)
 - [Project structure](#project-structure)
 - [Getting started](#getting-started)
+- [Limitations](#limitations)
 - [Future scope](#future-scope)
 - [Author](#author)
 
@@ -80,16 +80,12 @@ This project turns a prediction into a decision. Every employee gets a risk scor
 
 <table>
   <tr>
-    <td align="center"><img src="<img width="1917" height="872" alt="dashbaord png" src="https://github.com/user-attachments/assets/bfc40513-b544-4b2c-a63b-dd5ed9617942" />
-" alt="Employee Lookup"><br><b>Employee Lookup</b></td>
-    <td align="center"><img src="<img width="1910" height="876" alt="live_predictor png" src="https://github.com/user-attachments/assets/14d9334b-4acd-4474-ac0c-86f5b7d6ee6b" />
-" alt="Live Predictor"><br><b>Live Predictor</b></td>
+    <td align="center"><img src="lookup.png" alt="Employee Lookup"><br><b>Employee Lookup</b></td>
+    <td align="center"><img src="predictor.png" alt="Live Predictor"><br><b>Live Predictor</b></td>
   </tr>
   <tr>
-    <td align="center"><img src="<img width="1917" height="876" alt="what-if png" src="https://github.com/user-attachments/assets/6b8f46d7-95db-4c75-bb56-2874c4f689a2" />
-" alt="What-if Simulator"><br><b>What-if Simulator</b></td>
-    <td align="center"><img src="<img width="1917" height="872" alt="retention png" src="https://github.com/user-attachments/assets/ec0b0ffa-6503-4a72-a361-694721e5cc61" />
-" alt="Retention Strategy"><br><b>Retention Strategy</b></td>
+    <td align="center"><img src="whatif.png" alt="What-if Simulator"><br><b>What-if Simulator</b></td>
+    <td align="center"><img src="strategy.png" alt="Retention Strategy"><br><b>Retention Strategy</b></td>
   </tr>
 </table>
 
@@ -189,11 +185,13 @@ Held-out test set: 294 employees, of whom 47 left.
 
 ```
 employee-attrition-risk-analyzer/
+├── index.html          The dashboard (open this file)
 ├── notebooks/          Analysis and modelling notebooks, run in order
 ├── data/               Dataset and generated outputs
-├── dashboard/          Dashboard source
-├── screenshots/        Images used in this README
-├── index.html          The dashboard (open this file)
+├── models/             Saved model files
+├── outputs/            Generated tables and charts
+├── overview.png ...    Screenshots used in this README
+├── requirements.txt
 └── README.md
 ```
 
@@ -206,7 +204,7 @@ employee-attrition-risk-analyzer/
 **Run the notebooks.**
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/employee-attrition-risk-analyzer.git
+git clone https://github.com/Yash-Verse09/employee-attrition-risk-analyzer.git
 cd employee-attrition-risk-analyzer
 pip install pandas numpy scikit-learn xgboost shap matplotlib seaborn jupyter
 jupyter notebook
@@ -227,7 +225,7 @@ Then run the notebooks in the order they are numbered.
 ## Author
 
 **Yash Gupta**
-BCA Semester 5, Department of Computing and Intelligent System, ITM University Gwalior
+BCA Semester 5, Department of Computer Applications, ITM University Gwalior
 
 <div align="center">
 
