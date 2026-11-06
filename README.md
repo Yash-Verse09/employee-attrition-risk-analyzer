@@ -76,19 +76,6 @@ This project turns a prediction into a decision. Every employee gets a risk scor
 
 ---
 
-## Screenshots
-
-<table>
-  <tr>
-    <td align="center"><img src="lookup.png" alt="Employee Lookup"><br><b>Employee Lookup</b></td>
-    <td align="center"><img src="predictor.png" alt="Live Predictor"><br><b>Live Predictor</b></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="whatif.png" alt="What-if Simulator"><br><b>What-if Simulator</b></td>
-    <td align="center"><img src="strategy.png" alt="Retention Strategy"><br><b>Retention Strategy</b></td>
-  </tr>
-</table>
-
 <details>
 <summary><b>All dashboard pages</b></summary>
 
