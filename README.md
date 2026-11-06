@@ -24,7 +24,7 @@ Predicts **who** may leave, explains **why**, and recommends **what HR can do ab
 - [Overview](#overview)
 - [Why this project is different](#why-this-project-is-different)
 - [Key features](#key-features)
-- [Screenshots](#screenshots)
+- [All Dashbaord Information](#Information)
 - [System architecture](#system-architecture)
 - [Dataset](#dataset)
 - [Methodology](#methodology)
